@@ -14,13 +14,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Scroll implements Interaction {
-    private final double start;
-    private final double end;
 
-    public Scroll(double start, double end) {
-        this.start = start;
-        this.end = end;
-    }
 
     @Override
     @Step("Realiza Scroll")
@@ -36,11 +30,7 @@ public class Scroll implements Interaction {
                 .release()
                 .perform();
 
-//        IOSDriver driver = ThucydidesWebDriverSupport.getProxiedDriver();
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        Map<String, Object> params = new HashMap<>();
-//        params.put("direction", "down");
-//        js.executeScript("mobile: scroll", params);
+
     }
 
     public static Scroll up() {
@@ -48,6 +38,6 @@ public class Scroll implements Interaction {
     }
 
     public static Scroll down() {
-        return instrumented(Scroll.class, 0.4, 0.8);
+        return instrumented(Scroll.class, 0.6, 0.10);
     }
 }

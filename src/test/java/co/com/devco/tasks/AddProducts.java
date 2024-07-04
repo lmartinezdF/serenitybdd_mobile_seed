@@ -3,9 +3,13 @@ package co.com.devco.tasks;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
+
 import static co.com.devco.userinterface.ProductPage.BTN_BACK_TO_HOME;
 
 public class AddProducts {
@@ -18,7 +22,7 @@ public class AddProducts {
                                             actor.attemptsTo(
                                                     AddProduct.toTheCart(nameProduct.get(product).get("products")),
                                                     Click.on(BTN_BACK_TO_HOME))
-                                            );
+                            );
                 }
         );
     }

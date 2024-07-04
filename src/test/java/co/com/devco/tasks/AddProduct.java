@@ -1,6 +1,6 @@
 package co.com.devco.tasks;
 
-import co.com.devco.interactions.NewScroll;
+
 import co.com.devco.interactions.Scroll;
 import io.appium.java_client.AppiumBy;
 
@@ -8,8 +8,9 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.ClickOnTarget;
+
 import net.serenitybdd.screenplay.targets.Target;
+
 
 import static co.com.devco.userinterface.ProductPage.BTN_ADD_TO_CART;
 
@@ -26,7 +27,7 @@ public class AddProduct {
                             .locatedForIOS(AppiumBy.iOSNsPredicateString(iosLocator));
                     actor.attemptsTo(Click.on(product));
                     actor.attemptsTo(Scroll.down());
-                    actor.attemptsTo(new ClickOnTarget(BTN_ADD_TO_CART));
+                    actor.attemptsTo(Click.on(BTN_ADD_TO_CART));
                 }
         );
     }
